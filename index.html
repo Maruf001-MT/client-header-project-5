@@ -1,3 +1,9 @@
+<!------------------------------------------------------------------
+--------------------------------------------------------------------
+This sticky, responsive header is made by MARUF JISAN (Web Developer). Contact and get a new website service for you:- https://www.fiverr.com/marufjisan  and Gmail:- jisanmaruf562@gmail.com       
+--------------------------------------------------------------------
+------------------------------------------------------------------->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,6 +76,9 @@ a{
     width: 100%;
 }
 .navbar.sticky{
+   display: none;
+}
+.topbar.sticky{
    display: none;
 }
 .desk-nav{
@@ -353,16 +362,16 @@ padding:10px;
         </div>
         <div class="sub-logo">
             <div class="first-dropdown-container">
-                <p>Sprach</p>
+                <p>Sprache</p>
                 <a href="#"> Deutsch <i style="font-size: 1rem;"class="fa-solid fa-angle-down"></i></a>
                 <div class="first-dropdown-content">
-                  <a href="#" target="_blank">Deutsch</a>
-                  <a href="#" target="_blank">English</a>
+                  <a href="https://inwohnhotel.com/de/" target="_blank">Deutsch</a>
+                  <a href="https://inwohnhotel.com/" target="_blank">English</a>
                   <a href="#" target="_blank">Dansk</a>
                 </div>
             </div>
             <a href="https://www.instagram.com/inwohn.hotel/" class="insta"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.inwohn.de/" style="text-decoration: underline;" class="backto">Back to inwohn</a>
+            <a href="https://www.inwohn.de/" style="text-decoration: underline;" class="backto">Back to inwohn.</a>
         </div>
     </section>
     <section class="navbar">
@@ -370,9 +379,9 @@ padding:10px;
         <div class="desk-nav">
             <div class="desk-menu">
                 <a href="https://www.inwohn.com/book-now">Book now </a>
-                <a href="#">The studios </a>
-                <a href="#">About us </a>  
-                <a href="#">Find us </a>
+                <a href="https://inwohnhotel.com/the-studios/">The studios </a>
+                <a href="https://inwohnhotel.com/about-us/">About us </a>  
+                <a href="https://inwohnhotel.com/find-us/">Find us </a>
             </div>
         </div>   
     </section> 
@@ -420,7 +429,9 @@ padding:10px;
 //sticky navbar
 window.addEventListener("scroll", function(){
   var navbar = document.querySelector(".navbar");
-  navbar.classList.toggle("sticky", window.scrollY > 0)
+  var topbar = document.querySelector(".topbar");
+  navbar.classList.toggle("sticky", window.scrollY > 0);
+  topbar.classList.toggle("sticky", window.scrollY > 0);
 })
     </script>
 
