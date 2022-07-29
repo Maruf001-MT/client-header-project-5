@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <!--font awesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- poppins google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    position: fixed;
+    width: 100%;
+}
+.topbar{
+    padding: 10px;
+    background-color:  #313a47;
+}
+.topbar p{
+    margin-left: 100px;
+    color: white;
+    font-size: 0.8rem;
+}
+.logobar{
+    width: 100%;
+    padding: 10px 0px;
+    padding-bottom: 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logobar .main-logo{
+    margin-left: 100px;
+}
+.logobar .main-logo img{
+    width: 250px;
+}
+.logobar .sub-logo{
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+}
+.logobar .sub-logo i{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: black;
+    padding: 10px;
+}
+.logobar .sub-logo a{
+    font-size: 0.9rem;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.navbar{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+}
+.navbar.sticky{
+   display: none;
+}
+.desk-nav{
+    padding: 5px;
+    /* background-color: grey; */
+    padding-left: 100px;
+}
+.desk-menu{
+    display: inline;
+}
+.desk-nav a{
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 5px 15px;
+}
+.desk-nav a:hover{
+    color: #486790;
+}
+
+
+.first-dropdown-container p{
+    font-size: 0.9rem;
+    padding: 0;
+}
+.first-dropdown-content{
+    position: absolute;
+    background-color: white;
+    text-align: left;
+    display: none;
+    padding: 5px;
+    z-index: 10000;
+    box-shadow:0px 0px 4px grey;
+}
+body{
+    background-color: red;
+    height: 1000px;
+}
+.first-dropdown-content a{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+
+.first-dropdown-content.active{
+    display: block;
+
+}
+.first-dropdown-container i.active{
+    transform: rotate(180deg);
+}
+
+
+
+.menu{
+    display: none;
+}
+
+
+
+
+@media only screen and (max-width: 640px){
+*{
+    margin: 0;
+    padding: 0;
+}
+.desk-menu{
+    display: none;
+}
+.navbar{
+    display: none;
+}
+.topbar{
+    padding: 10px;
+    background-color:  #313a47;
+}
+.topbar p{
+    margin-left: 10px;
+    color: white;
+    font-size: 0.7rem;
+}
+.logobar .main-logo{
+    margin-left: 50px;
+}
+.logobar .main-logo img{
+    width: 150px;
+}
+.logobar .sub-logo{
+    margin-right: 5px;
+    display: flex;
+}
+.sub-logo .first-dropdown-container{
+   
+}
+.sub-logo .backto, .insta{
+   display: none;
+}
+.menu{
+    display:block;
+    z-index: 3000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+.menu-click{
+    width:100px;
+    height:40px;
+    position: absolute;
+    top: 10px;
+    left: 2%;
+    z-index: 1000;
+}
+.humberger-menu{
+    cursor: pointer;
+}
+#toggle.active{
+    background:#BDBAB4;
+}
+#toggle{
+    position:fixed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:0.2s;
+    top:75px;
+    left: 25px;
+    z-index:100;
+    cursor: pointer;
+}
+#toggle.active::before{
+    transform:translateY(0px) rotate(45deg);
+    box-shadow:0 0 0 black;
+}
+#toggle::before{
+    content:'';
+    position:absolute;
+    background:black;
+    width:26px;
+    height:4px;
+    transition:0.2s;
+    box-shadow:0 10px 0 black;
+    transform:translateY(-10px);
+}
+#toggle::after{
+    content:'';
+    position:absolute;
+    background:black;
+    width:26px;
+    height:4px;
+    transition:0.2s;
+    transform:translateY(10px);
+}
+#toggle.active::after{
+    transform:translateY(0px) rotate(-45deg);
+}
+.menu{
+    z-index: -1;
+}
+.sidemenu{
+    position:fixed;
+    top:85px;
+    left:-80%;
+    width:80%;
+    height:100%;
+    background:white;
+    overflow-x:hidden;
+    transition:0.5s;
+    z-index: 1;
+}
+.sidemenu.active{
+    left: 0%;
+}
+/* .sidemenu a{
+text-decoration:none;
+display:block;
+font-size:1.5rem;
+color:#999;
+padding:10px;
+}*/
+.phn-menu{
+    padding: 0px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.phn-menu a{
+    text-decoration: none;
+    padding: 5px 15px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: black;
+    position: relative;
+    top: 20px;
+}
+.first-phn-dropdown-container{
+    display: block;
+    position: relative;
+    padding: 15px;
+}
+.first-phn-dropdown-container i{
+    transition: 0.5s;
+}
+.first-phn-dropdown-container i.active{
+    transform: rotate(180deg);
+}
+.second-phn-dropdown-container i.active{
+    transform: rotate(180deg);
+}    
+.third-phn-dropdown-container i.active{
+    transform: rotate(180deg);
+}
+.first-phn-dropdown-content, .second-phn-dropdown-content{
+    position: relative;
+    top: 0px;
+    left: 10px;
+    background-color: transparent;
+    text-align: left;
+    padding: 10px;
+    display: none;
+}
+.third-phn-dropdown-content{
+    position: relative;
+    top: 0px;
+    left: -8px;
+    background-color: transparent;
+    text-align: left;
+    padding: 10px;
+    display: none;
+}
+.first-phn-dropdown-content.active{
+    display: block;
+    transition: 0.3s;
+    animation: dropdown 0.3s linear 1;
+}
+@keyframes dropdown {
+0%{
+    top: -50px;
+    opacity: 0;
+}
+100%{
+    top: 0px;
+    opacity: 1;
+}
+}
+.second-phn-dropdown-content.active{
+    display: block;
+    animation: dropdown 0.3s linear 1;
+}
+.third-phn-dropdown-content.active{
+    display: block;
+    animation: dropdown 0.3s linear 1;
+}
+
+.first-phn-dropdown-content a, .second-phn-dropdown-content a, .third-phn-dropdown-content a{
+    display: flex;
+    align-items: center;
+    border-left: none;
+    min-height: 35px;
+    padding: 15px 0px;
+}
+}
+
+@media only screen and (max-width: 400px){
+    .login-sec{
+        position: absolute;
+        right: -20%;
+    }
+}
+
+    </style>
+</head>
+<body>
+<header>
+    <section class="topbar">
+        <p>Willkommen bei inwohn. Wohnen mit Niveau</p>
+    </section>
+    <section class="logobar">
+        <div class="main-logo">
+            <img src="https://www.linkpicture.com/q/hotelogo.png" alt="">
+        </div>
+        <div class="sub-logo">
+            <div class="first-dropdown-container">
+                <p>Sprach</p>
+                <a href="#"> Deutsch <i style="font-size: 1rem;"class="fa-solid fa-angle-down"></i></a>
+                <div class="first-dropdown-content">
+                  <a href="#" target="_blank">Deutsch</a>
+                  <a href="#" target="_blank">English</a>
+                  <a href="#" target="_blank">Dansk</a>
+                </div>
+            </div>
+            <a href="https://www.instagram.com/inwohn.hotel/" class="insta"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.inwohn.de/" style="text-decoration: underline;" class="backto">Back to inwohn</a>
+        </div>
+    </section>
+    <section class="navbar">
+        <!-- ------------------------header for desktop ------------------------>
+        <div class="desk-nav">
+            <div class="desk-menu">
+                <a href="https://www.inwohn.com/book-now">Book now </a>
+                <a href="#">The studios </a>
+                <a href="#">About us </a>  
+                <a href="#">Find us </a>
+            </div>
+        </div>   
+    </section> 
+</header>
+ 
+        
+        
+        <!----------------------- header for mobile----------------- -->
+        <div class="menu">
+            <!-- the animated hamburger menu icon -->
+            <div class="humberger-menu">
+                <div class="menu-click"></div>
+                <div id="toggle"></div>
+            </div>
+            <!-- this i sidemenu. It will come when you click the hamburger menu in mobile----->
+            <div class="sidemenu">
+                 <div class="phn-menu">
+                    <a href="#">Book now </a>
+                    <a href="#">The rooms </a>
+                    <a href="#">About us </a>  
+                    <a href="#">Find us </a>
+                </div>
+            </div>
+         </div>
+
+ <!--------------------------- javascript connect ------------------>
+    <script>
+                      //menubar toggle and sidebar
+   
+                      const navigation=document.querySelector('.sidemenu');
+                document.querySelector(".menu-click").onclick=function(){
+                document.getElementById('toggle').classList.toggle('active');
+                  navigation.classList.toggle('active');
+                 }
+                 document.querySelector("#toggle").onclick=function(){
+                  document.getElementById('toggle').classList.toggle('active');
+                  navigation.classList.toggle('active');
+                   }
+                   
+                   document.querySelector(".first-dropdown-container").onclick=function(){
+                    document.querySelector(".first-dropdown-container i").classList.toggle('active');
+                    document.querySelector(".first-dropdown-content").classList.toggle('active');
+                  }
+
+//sticky navbar
+window.addEventListener("scroll", function(){
+  var navbar = document.querySelector(".navbar");
+  navbar.classList.toggle("sticky", window.scrollY > 0)
+})
+    </script>
+
+</body>
+</html>
